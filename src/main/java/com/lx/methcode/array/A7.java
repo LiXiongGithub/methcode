@@ -15,7 +15,8 @@ public class A7 {
 		int a[] = {1,9,9};
 		int a1[] = {9,9,9};
 		int a2[] = {2};
-		System.out.println(JSON.toJSONString(getResult(a2)));
+		int a3[] = {1,9,9};
+		System.out.println(JSON.toJSONString(getResult(a3)));
 	}
 	public static int[] getResult(int[] a){
 		/*

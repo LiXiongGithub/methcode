@@ -21,7 +21,7 @@ public class A6 {
 	public static int[] judge(int[] a,int[] b){
 		/**
 		 * 先排序，两个指针比较
-		 * 如果相等，将该元素加入结果数组，如果不等，将值较小的那个指针向后移动一位
+		 * 如果相等，将该元素加入结果数组，并两个指针都后移，如果不等，将值较小的那个指针向后移动一位
 		 * 继续比较
 		 */
 		List<Integer> result = new ArrayList<Integer>();
