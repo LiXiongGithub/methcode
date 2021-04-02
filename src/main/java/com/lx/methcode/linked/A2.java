@@ -19,7 +19,7 @@ public class A2 {
 		System.out.println("翻转前");
 		A.getAllNode(head);
 		System.out.println("翻转后");
-		A.getAllNode(revers2(head));
+		A.getAllNode(revers3(head));
 		
 		
 	}
@@ -69,6 +69,27 @@ public class A2 {
 			head = tempNode;
 		}
 		return newHead;
+	}
+	/**
+	 * 递归：
+	 * 函数定义：翻转单链表f(head)
+	 * 结束条件：当head为空或者head.next为空，直接返回head为新的head
+	 * 等价关系：假设有三个节点，第一个节点不动，然后翻转了后两个，需要处理第一个和第二个的关系。
+	 */
+	public static ListNode revers3(ListNode head){
+		if(head == null || head.next == null){
+			return head;
+		}
+		//翻转剩余的链表
+		ListNode newhead = revers3(head.next);
+		//但是前两个节点没有改变
+		//临时指针指向第二个节点
+		ListNode temp  = head.next;
+		//第二个节点的下一个节点指向head
+		temp.next = head;
+		//head的下一个节点指向null
+		head.next = null;
+		return newhead;
 	}
 	
 	
