@@ -19,6 +19,10 @@ public class A {
 		
 	}
 
+	/**
+	 * 移除链表中的元素
+	 * @param target
+	 */
 	private static void removeTarget(ListNode target) {
 		target.date = target.next.date;
 		target.next = target.next.next;
