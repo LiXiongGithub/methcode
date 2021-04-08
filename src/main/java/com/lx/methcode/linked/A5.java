@@ -40,5 +40,34 @@ public class A5 {
 		}
 		return false;
 	}
+	
+	/**
+	 * 如果有环,环的入口确定
+	 * 假设一个指针走了k步，入口为位置为a，环长为b，每次到入口节点都会有k = a+nb（先走 a 步到入口节点，之后每绕 1 圈环（ b 步）都会再次到入口节点）
+	 * 则慢指针到入口节点的步数总是:a+nb步。
+	 * 则这时只需要将快指针指向head，改为一步一步走，到第二次相遇就可以确定a的大小。
+	 * 
+	 * @param head
+	 * @return
+	 */
+	public static ListNode check2(ListNode head){
+		//慢指针
+		ListNode sl = head;
+		//快指针
+		ListNode qu = head;
+		while(qu != null && qu.next != null){
+			qu = qu.next.next;
+			sl = sl.next;
+			if(sl == qu){
+				break;
+			}
+		}
+		qu =  head;
+		while(qu != sl){
+			qu = qu.next;
+			sl = sl.next;
+		}
+		return qu;
+	}
 
 }

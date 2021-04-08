@@ -61,11 +61,13 @@ public class A3 {
 		}
 		while(u == null && d != null){//到了u链表尾部。则将d链表的所有值存入
 			newP.next = d;
+			//同时后移指针
 			d = d.next;
 			newP = newP.next;
 		}
 		while(d == null && u != null){//到了d链表尾部。则将u链表的所有值存入
 			newP.next = u;
+			//同时后移指针
 			u = u.next;
 			newP = newP.next;
 		}
